@@ -63,7 +63,6 @@ async function copyAssets(src, dest) {
     const fileDestination = path.join(dest, file.name);
     await fsPromises.mkdir(dest, { recursive: true });
     if (file.isFile()) {
-      console.log(file);
       await fsPromises.copyFile(fileSource, fileDestination);
     } else {
       await copyAssets(fileSource, fileDestination);
