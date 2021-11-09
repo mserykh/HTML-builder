@@ -1,6 +1,5 @@
 const fs =  require('fs/promises');
 const path = require('path');
-const chalk = require('chalk');
 
 const secretFolderPath = path.join(__dirname, 'secret-folder');
 
@@ -17,7 +16,7 @@ async function readDirectory() {
         const stats = await fs.stat(filePath);
         const fileSize = stats.size;
         
-        console.log(chalk.hex('#B07FFC')(`${fileNameToLog} - ${fileExt.slice(1)} - ${fileSize/1024}kb`));
+        console.log(`${fileNameToLog} - ${fileExt.slice(1)} - ${fileSize/1024}kb`);
       }
     }
   }
